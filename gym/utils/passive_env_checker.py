@@ -281,10 +281,6 @@ def passive_env_step_check(env, action):
         )
 
     _check_obs(obs, env.observation_space, "step")
-    if np.any(np.isnan(obs)):
-        logger.warn("Encountered NaN value in observations.")
-    if np.any(np.isinf(obs)):
-        logger.warn("Encountered inf value in observations.")
 
     assert isinstance(
         reward, (float, int, np.floating, np.integer)
